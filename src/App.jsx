@@ -337,7 +337,8 @@ export default function App() {
 
   const sendGift = () => {
     if (!giftModal) return;
-    const entry = { ...giftModal, note: giftNote.trim(), time: new Date().toISOString(), id: Date.now() };
+const entry = { ...giftModal, note: giftNote.trim(), time: new Date().toISOString(), id: Date.now() };
+setGests(prev => [entry, ...prev]);
     setGests(prev => [entry, ...prev]);
     setGAnim(giftModal);
     setTimeout(() => setGAnim(null), 2200);
